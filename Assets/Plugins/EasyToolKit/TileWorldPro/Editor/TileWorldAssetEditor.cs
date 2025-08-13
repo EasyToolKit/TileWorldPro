@@ -62,7 +62,7 @@ namespace EasyToolKit.TileWorldPro.Editor
                 selectedDataStoreIndex = Array.IndexOf(dataStoreNames, dataStoreName);
             }
             EditorGUI.BeginChangeCheck();
-            selectedDataStoreIndex = EditorGUILayout.Popup("数据存储方案", selectedDataStoreIndex, dataStoreNames);
+            selectedDataStoreIndex = EasyEditorGUI.ValueDropdown(TempContent.SetText("数据存储方案"), selectedDataStoreIndex, dataStoreNames, (index, value) => new GUIContent(value));
             if (EditorGUI.EndChangeCheck())
             {
                 if (selectedDataStoreIndex != -1)
@@ -87,7 +87,7 @@ namespace EasyToolKit.TileWorldPro.Editor
 
                 if (_dataStoreExpanded.Value)
                 {
-                    _dataStoreProperty.Draw();
+                    _dataStoreProperty.Draw(null);
                 }
                 EasyEditorGUI.EndBox();
 

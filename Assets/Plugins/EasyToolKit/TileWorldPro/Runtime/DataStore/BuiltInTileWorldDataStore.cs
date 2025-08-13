@@ -13,8 +13,8 @@ namespace EasyToolKit.TileWorldPro
     [Serializable]
     public class BuiltInTileWorldDataStore : ITileWorldDataStore, ISerializationCallbackReceiver
     {
-        private Dictionary<ChunkPosition, Chunk> _chunks;
-        private Dictionary<ChunkPosition, BakedChunk> _bakedChunks;
+        private Dictionary<ChunkPosition, Chunk> _chunks = new Dictionary<ChunkPosition, Chunk>();
+        private Dictionary<ChunkPosition, BakedChunk> _bakedChunks = new Dictionary<ChunkPosition, BakedChunk>();
 
         public IReadOnlyDictionary<ChunkPosition, Chunk> Chunks => _chunks;
         public IReadOnlyDictionary<ChunkPosition, BakedChunk> BakedChunks => _bakedChunks;

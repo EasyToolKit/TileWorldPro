@@ -37,7 +37,6 @@ namespace EasyToolKit.TileWorldPro
 
     public interface ITileBuildProcessor
     {
-        string Label { get; }
         void OnBeforeInstantiateTile(BeforeTileInstantiateParameters parameters);
         void OnAfterInstantiateTile(AfterTileInstantiateParameters parameters);
     }
